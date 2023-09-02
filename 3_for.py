@@ -16,12 +16,33 @@
 * Посчитать и вывести среднее количество продаж всех товаров
 """
 
+l =  [
+    {'product': 'iPhone 12', 'items_sold': [363, 500, 224, 358, 480, 476, 470, 216, 270, 388, 312, 186]}, 
+    {'product': 'Xiaomi Mi11', 'items_sold': [317, 267, 290, 431, 211, 354, 276, 526, 141, 453, 510, 316]},
+    {'product': 'Samsung Galaxy 21', 'items_sold': [343, 390, 238, 437, 214, 494, 441, 518, 212, 288, 272, 247]},
+  ]
+
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+    full_sum = 0
+    full_avg = 0
+    for i in l:
+        one_sum = sum(i['items_sold'])
+        one_avg = one_sum / len(i['items_sold'])
+        full_sum += one_sum
+        full_avg += one_avg
+
+        product = i['product']
+
+        print(f'Cуммарное количество продаж для {product} - {one_sum}')
+        print(f'Cреднее количество продаж для {product} - {one_avg}')
+
+    print(f'Cуммарное количество продаж для всех товаров - {full_sum}')
+    print(f'Cреднее количество продаж для всех товаров - {full_avg}')    
+
+
+   
     
 if __name__ == "__main__":
     main()
